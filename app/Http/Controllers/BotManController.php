@@ -15,14 +15,22 @@ class BotManController extends Controller
     {
         $botman = app('botman');
 
-        $botman->hears('{message}', function($botman, $message) {
+        $botman->hears('{data}', function ($bot, $data) {
+            $info2 = "Ada lagi yang bisa dibantu?";
+            $array = explode(' ', $data);
 
-            if ($message == 'hi') {
-                $this->askName($botman);
-            }else{
-                $botman->reply("write 'hi' for testing...");
+            $count = count($array);
+            $checker = 0;
+
+            for($i=0; $i<$count; $i++){
+              if($array[$i]=='produk') $checker++;
+              elseif($array[$i]=='pegadaian') $checker++;
             }
 
+            if($checker==2) $info = "Produk Pegadaian yang ada saat ini adalah KCA, Gadai, Amanah, Emas. ".$info2;
+            else $info = "Maaf, saya tidak memahami maksud anda. ".$info2;
+
+            $bot->reply($info);
         });
 
         $botman->listen();
