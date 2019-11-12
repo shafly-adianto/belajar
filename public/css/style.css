@@ -21,7 +21,7 @@ dark green #00AB4E */
 }
 
 #myNavbar{
-  margin-top: 20px;
+  padding-bottom: 20px;
 }
 
 #myNavbar a{
@@ -29,8 +29,13 @@ dark green #00AB4E */
   font-family: "Montserrat-Medium";
 }
 
+#myNavbar a:hover{
+  background-color: #00AB4E !important;
+  color: white !important;
+}
+
 .icon-bar{
-  background-color: #72BF44 !important;
+  background-color: #00AB4E !important;
 }
 
 .navbar-toggle{
