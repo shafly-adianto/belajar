@@ -223,6 +223,7 @@ dark green #00AB4E */
 
 .copyright{
   padding: 10px 100px;
+  text-align: center;
 }
 
 .copyright img{
@@ -284,4 +285,7 @@ dark green #00AB4E */
   .fitur .isi div{
     margin-top: 50px;
   }
+
+  .fitur .isi div p{
+    padding: 30px 0px;
 }
