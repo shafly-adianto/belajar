@@ -1,7 +1,21 @@
 @extends('master.index')
 
 @section('content')
-<div class="row tentang">
+<div class="pattern">
+    <img src="{{url('')}}/image/pattern2.png" >
+</div>
+<div class="row slogan">
+  <div class="col-md-7">
+    <h1>Ask, Find and Get</h1>
+    <h2>Whatever you need</h2>
+  </div>
+  <div class="col-md-5">
+  </div>
+</div>
+<div class="pattern2">
+    <img src="{{url('')}}/image/pattern3.png" >
+</div>
+<div class="row tentang slideanim">
   <div class="col-md-7">
     <img src="{{url('')}}/image/mascot.png" alt="Gea">
   </div>
@@ -9,6 +23,9 @@
     <p class="judul">Tentang <b>Gea</b></p>
     <p class="isi">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
   </div>
+</div>
+<div class="pattern3">
+    <img src="{{url('')}}/image/pattern4.png" >
 </div>
 <div class="row fitur">
   <div class="slideanim">
@@ -45,6 +62,6 @@
   </div>
 </div>
 <div class="row copyright slideanim">
-  <img src="{{url('')}}/image/pegadaian.png" alt="Logo Pegadaian">
+  <img src="{{url('')}}/image/pegadaian_center.png" alt="Logo Pegadaian">
 </div>
 @endsection
