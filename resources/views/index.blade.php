@@ -22,7 +22,7 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Produk</a></li>
-          <li><a href="#">Simulasi</a></li>
+          <li><a href="{{url('/simulasi')}}">Simulasi</a></li>
           <li><a href="#">Info Harga Pasar</a></li>
         </ul>
       </div>
