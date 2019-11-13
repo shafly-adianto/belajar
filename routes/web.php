@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home.home');
-});
+Route::get('/', 'ViewController@index');
+Route::get('/simulasi','ViewController@simulasi');
+
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
