@@ -16,6 +16,10 @@
 /* yellow #BFD730
 mid green #72BF44
 dark green #00AB4E */
+.active{
+  background-color: #00AB4E !important;
+  color: white !important;
+}
 
 .navbar{
   background-color: white;
