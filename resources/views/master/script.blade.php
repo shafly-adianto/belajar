@@ -6,7 +6,7 @@ var botmanWidget = {
   introMessage: "Hallo, aku Gea. Ada yang bisa aku bantu?",
   title: "Gea Chat",
   frameEndpoint: "{{url('')}}/chat.html",
-  placeholderText: '',
+  placeholderText: 'Ketik Disini',
   mainColor: '#00AB4E',
   bubbleBackground: '#00AB4E',
   aboutText: 'Kelompok 5',

@@ -16,18 +16,22 @@ class BotManController extends Controller
         $botman = app('botman');
 
         $botman->hears('{data}', function ($bot, $data) {
-            $info2 = "Ada lagi yang bisa dibantu?";
-            $array = explode(' ', $data);
+            $info2 = "Ada lagi yang bisa Gea bantu?";
+            $newData = strtolower($data);
+            $array = explode(' ',$newData);
 
             $count = count($array);
             $checker = 0;
 
-            for($i=0; $i<$count; $i++){
-              if($array[$i]=='produk') $checker++;
-              elseif($array[$i]=='pegadaian') $checker++;
+            if (strpos($newData, 'pegadaian') !== false && strpos($newData, 'produk') === false) {
+                $info = "Gea jelasin ya tentang Pegadaian, Pegadaian adalah sebuah BUMN sektor keuangan Indonesia yang bergerak pada tiga lini bisnis perusahaan yaitu pembiayaan, emas dan aneka jasa.<br>".$info2;
+            } 
+            elseif (strpos($newData, 'produk') !== false) {
+                $info = "Oke, Gea kasih tau. Pegadaian punya banyak sekali produk yang menarik, kamu bisa kunjungi link yang Gea kasih dibawah ini untuk tau lebih banyak masing - masing produk.<br> <a href='https://sahabatpegadaian.com/produk-pegadaian' title='Produk Pegadaian' target='_blank'>Produk Pegadaian</a> <br>".$info2;
             }
-
-            if($checker==2) $info = "Produk Pegadaian yang ada saat ini adalah KCA, Gadai, Amanah, Emas. ".$info2;
+            elseif (strpos($newData, 'simulasi') !== false) {
+                $info = "Oke, ada 3 produk yang bisa kamu coba simulasi. Akses halaman simulasi dengan memilih menu navbar simulasi diatas untuk tahu hasilnya. <br>".$info2;
+            }
             else $info = "Maaf, saya tidak memahami maksud anda. ".$info2;
 
             $bot->reply($info);

@@ -3,4 +3,5 @@
 <link rel="icon" href="{{url('')}}/image/logo.png">
 <link rel="stylesheet" href="{{url('')}}/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="{{url('')}}/css/style.css">
+
 <title>GEA</title>

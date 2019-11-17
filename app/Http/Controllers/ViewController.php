@@ -11,9 +11,19 @@ class ViewController extends Controller
     	return view('home.home');
     }
 
-    public function simulasi()
+    public function simulasiGadai()
     {
-    	return view('simulasi.simulasi');
+    	return view('simulasi.simulasiGadai');
+    }
+
+    public function simulasiBeliEmas()
+    {
+        return view('simulasi.simulasiBeliEmas');
+    }
+
+    public function simulasiKreditAmanah()
+    {
+        return view('simulasi.simulasiKreditAmanah');
     }
 
     public function produk()
