@@ -13,6 +13,16 @@ class ViewController extends Controller
 
     public function simulasi()
     {
-    	return view('simulasi');
+    	return view('simulasi.simulasi');
+    }
+
+    public function produk()
+    {
+      return view('produk.produk');
+    }
+
+    public function info_harga_pasar()
+    {
+      return view('info_harga_pasar.info_harga_pasar');
     }
 }

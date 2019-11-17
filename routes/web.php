@@ -12,6 +12,28 @@
 */
 
 Route::get('/', 'ViewController@index');
-Route::get('/simulasi','ViewController@simulasi');
+
+Route::prefix('simulasi')->group(function(){
+  Route::get('/', 'ViewController@simulasi');
+});
+
+Route::prefix('produk')->group(function(){
+  Route::get('/', 'ViewController@produk');
+});
+
+Route::prefix('info_harga_pasar')->group(function(){
+  Route::get('/', 'ViewController@info_harga_pasar');
+});
+
+Route::group(['prefix' => 'admin'], function () {
+    Auth::routes();
+    Route::get('/home', 'HomeController@index');
+    Route::get('/', function(){
+      return view('index');
+    });
+    Route::group(['prefix' => 'produk'], function () {
+      Route::get('/', 'ProdukController@index');
+    });
+});
 
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');

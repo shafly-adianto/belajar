@@ -4,7 +4,13 @@
 <script>
 var botmanWidget = {
   introMessage: "Hallo, aku Gea. Ada yang bisa aku bantu?",
-  title: "Gea Chat"
+  title: "Gea Chat",
+  frameEndpoint: "{{url('')}}/chat.html",
+  placeholderText: '',
+  mainColor: '#00AB4E',
+  bubbleBackground: '#00AB4E',
+  aboutText: 'Kelompok 5',
+  // bubbleAvatarUrl: 'https://www.applozic.com/assets/resources/images/Chat-Bot-Icon@512px.svg'
 };
 
 $(window).scroll(function() {
