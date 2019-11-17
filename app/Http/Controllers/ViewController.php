@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\produk;
 
 class ViewController extends Controller
 {
@@ -18,7 +18,8 @@ class ViewController extends Controller
 
     public function produk()
     {
-      return view('produk.produk');
+      $data = produk::all();
+      return view('produk.produk', compact('data'));
     }
 
     public function info_harga_pasar()
