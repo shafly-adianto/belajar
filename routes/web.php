@@ -13,9 +13,11 @@
 
 Route::get('/', 'ViewController@index');
 
-Route::prefix('simulasi')->group(function(){
-  Route::get('/', 'ViewController@simulasi');
-});
+// Route::prefix('simulasi')->group(function(){
+Route::get('/simulasiGadai', 'ViewController@simulasiGadai');
+Route::get('/simulasiBeliEmas', 'ViewController@simulasiBeliEmas');
+Route::get('/simulasiKreditAmanah', 'ViewController@simulasiKreditAmanah');
+// });
 
 Route::prefix('produk')->group(function(){
   Route::get('/', 'ViewController@produk');

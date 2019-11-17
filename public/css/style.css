@@ -352,3 +352,9 @@ dark green #00AB4E */
   .fitur .isi div p{
     padding: 30px 0px;
 }
+
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
