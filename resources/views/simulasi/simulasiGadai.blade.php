@@ -17,8 +17,9 @@
 			    <div class="col-sm-7">
 			      <select id="jeniskca" name="jeniskca" class="form-control">
 			      	<option value="kcareg">KCA Reguler</option>
-			      	<option value="kcaprim">KCA Prima</option>
+			      	<option value="kcaflex">KCA Flexi</option>
 			      	<option value="kcabis">KCA Bisnis</option>
+			      	<option value="kcaprim">KCA Prima</option>
 			      </select>
 			    </div>
 			</div>
@@ -41,7 +42,7 @@
   			<div class="form-group row">
 			    <label for="sewamodal" class="col-sm-5 col-form-label">Tarif Sewa Modal</label>
 			    <div class="col-sm-7">
-			      	<input type="number" class="form-control" name="sewamodal" id="sewamodal" placeholder="Tarif Sewa Modal">
+			      	<input type="number" class="form-control" name="sewamodal" id="sewamodal" placeholder="Tarif Sewa Modal" readonly>
 			    </div>
   			</div>
 			<div class="form-group row">
