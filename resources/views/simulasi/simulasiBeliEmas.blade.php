@@ -15,7 +15,7 @@
 			<div class="form-group row">
 			    <label for="hargaEmas" class="col-sm-5 col-form-label">Harga Beli Emas /gr</label>
 			    <div class="col-sm-7">
-			     	<input type="number" class="form-control" name="hargaEmas" id="hargaEmas" placeholder="Harga Emas">
+			     	<input type="number" class="form-control" name="hargaEmas" id="hargaEmas" placeholder="Harga Emas" readonly>
 			    </div>
 			</div>
 			<div class="form-group row">
