@@ -1,4 +1,5 @@
 <script src="{{url('')}}/jquery/jquery.min.js"></script>
+<script src="{{url('')}}/jquery/jquery.mask.min.js"></script>
 <script src="{{url('')}}/bootstrap/bootstrap.min.js"></script>
 <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 <script>
