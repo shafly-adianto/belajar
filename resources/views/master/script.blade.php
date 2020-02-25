@@ -3,7 +3,7 @@
 <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 <script>
 var botmanWidget = {
-  introMessage: "Hallo, aku Gea. Ada yang bisa aku bantu?",
+  introMessage: "Hallo, ada yang bisa Gea bantu?",
   title: "Gea Chat",
   frameEndpoint: "{{url('')}}/chat.html",
   placeholderText: 'Ketik Disini',
