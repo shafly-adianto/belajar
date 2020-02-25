@@ -11,6 +11,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $this->call([
+          vocab_greetings_seeder::class,
+          vocab_how_seeder::class,
+          vocab_product_seeder::class,
+          vocab_time_seeder::class,
+          vocab_verb_seeder::class
+        ]);
     }
 }
