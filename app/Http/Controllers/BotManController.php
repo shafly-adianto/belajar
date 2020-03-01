@@ -33,6 +33,7 @@ class BotManController extends Controller
   public function getting_answer($checker){
     $answer = "";
 
+    // ===== greetings =====
     if(intval($checker->greetings['count']) > 0){
       $answer .= $checker->greetings['kata'];
       if(intval($checker->time['count']) > 0){
@@ -41,16 +42,17 @@ class BotManController extends Controller
       $answer .= ' :)';
     }
 
+    if(intval($checker->time['count']) > 0 && intval($checker->greetings['count']) == 0){
+      $answer .= $checker->time['kata'].' :)';
+    }
+    // ====================
+
     if(intval($checker->how['count']) > 0){
       $answer .= 'how:'.$checker->how['kata'].'; ';
     }
 
     if(intval($checker->product['count']) > 0){
       $answer .= 'product:'.$checker->product['kata'].'; ';
-    }
-
-    if(intval($checker->time['count']) > 0 && intval($checker->greetings['count']) == 0){
-      $answer .= $checker->time['kata'].' :)';
     }
 
     if(intval($checker->verb['count']) > 0){
