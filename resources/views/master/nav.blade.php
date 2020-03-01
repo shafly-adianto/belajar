@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{url('')}}"><img src="{{url('')}}/image/logo.png" width="100"></a>
+      <a class="navbar-brand" href="{{url('')}}"><img src="{{url('')}}/image/logo.png" width="80" style="margin-top:-8px"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -14,12 +14,11 @@
         <li>
           <a class="dropdown-toggle" data-toggle="dropdown" class="{{ Request::is('produk') ? 'active' : '' }}" href="#">Simulasi</a>
           <ul class="dropdown-menu">
-            <li><a href="/simulasiGadai">Simulasi Gadai</a></li>
-            <li><a href="/simulasiBeliEmas">Simulasi Beli Emas</a></li>
-            <li><a href="/simulasiKreditAmanah">Simulasi Kredit Amanah</a></li>
+            <li><a href="{{url('')}}/simulasiGadai">Simulasi Gadai</a></li>
+            <li><a href="{{url('')}}/simulasiBeliEmas">Simulasi Beli Emas</a></li>
+            <li><a href="{{url('')}}/simulasiKreditAmanah">Simulasi Kredit Amanah</a></li>
           </ul>
         </li>
-        <li><a href="{{url('')}}/info_harga_pasar" class="{{ Request::is('info_harga_pasar') ? 'active' : '' }}">Info Harga Pasar</a></li>
       </ul>
     </div>
   </div>
