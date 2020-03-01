@@ -70,9 +70,9 @@ class BotManController extends Controller
     $checker->verb['count'] = 0;
 
     foreach ($kata as $value) {
-      if($jumlah=$this->count_greetings($value)>0){
-        $checker->greetings['count'] += $jumlah;
-        $checker->greetings['kata'] = $value;
+      if(!is_null($vocab = $this->count_greetings($value))){
+        $checker->greetings['count'] += 1;
+        $checker->greetings['kata'] = $vocab->vocab;
       }
       if($jumlah=$this->count_how($value)>0){
         $checker->how['count'] += $jumlah;
@@ -82,9 +82,9 @@ class BotManController extends Controller
         $checker->product['count'] += $jumlah;
         $checker->product['kata'] = $value;
       }
-      if($jumlah=$this->count_time($value)>0){
-        $checker->time['count'] += $jumlah;
-        $checker->time['kata'] = $value;
+      if(!is_null($vocab = $this->count_time($value))){
+        $checker->time['count'] += 1;
+        $checker->time['kata'] = $vocab->vocab;
       }
       if($jumlah=$this->count_verb($value)>0){
         $checker->verb['count'] += $jumlah;
@@ -95,8 +95,10 @@ class BotManController extends Controller
     return $checker;
   }
 
+  // Toleransi typo 1 char untuk soundex
+
   public function count_greetings($value){
-    return vocab_greetings::where('vocab','=',$value)->count();
+    return vocab_greetings::whereRaw('soundex(vocab) like soundex(?)', $value)->first();
   }
 
   public function count_how($value){
@@ -108,7 +110,7 @@ class BotManController extends Controller
   }
 
   public function count_time($value){
-    return vocab_time::where('vocab','=',$value)->count();
+    return vocab_time::whereRaw('soundex(vocab) like soundex(?)', $value)->first();
   }
 
   public function count_verb($value){
