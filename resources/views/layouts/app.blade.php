@@ -38,9 +38,6 @@
                       <li class="nav-item">
                           <a class="nav-link" href="{{url('')}}/admin/produk">Produk</a>
                       </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="{{url('')}}/admin/info_harga_pasar">Info Harga Pasar</a>
-                      </li>
                     </ul>
                     @endauth
                     <!-- Right Side Of Navbar -->

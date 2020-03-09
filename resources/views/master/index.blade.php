@@ -6,6 +6,7 @@
 <body>
   @include('master.nav')
   <div class="container-fluid">
+  <div id="chatbot"><span class="fas fa-2x fa-comments icon"></div>
     @yield('content')
   </div>
 </body>
