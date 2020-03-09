@@ -13,11 +13,6 @@ class ViewController extends Controller
     	return view('home.home');
     }
 
-    public function simulasiGadai()
-    {
-    	return view('simulasi.simulasiGadai');
-    }
-
     public function simulasiBeliEmas()
     {
         return view('simulasi.simulasiBeliEmas');
@@ -41,10 +36,5 @@ class ViewController extends Controller
     {
       $data = produk::all();
       return view('produk.produk', compact('data'));
-    }
-
-    public function info_harga_pasar()
-    {
-      return view('info_harga_pasar.info_harga_pasar');
     }
 }

@@ -13,18 +13,11 @@
 
 Route::get('/', 'ViewController@index');
 
-// Route::prefix('simulasi')->group(function(){
-Route::get('/simulasiGadai', 'ViewController@simulasiGadai');
 Route::get('/simulasiBeliEmas', 'ViewController@simulasiBeliEmas');
 Route::get('/simulasiKreditAmanah', 'ViewController@simulasiKreditAmanah');
-// });
 
 Route::prefix('produk')->group(function(){
   Route::get('/', 'ViewController@produk');
-});
-
-Route::prefix('info_harga_pasar')->group(function(){
-  Route::get('/', 'ViewController@info_harga_pasar');
 });
 
 Route::group(['prefix' => 'admin'], function () {
@@ -70,4 +63,5 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 
+//get real price harga emas from pds production
 Route::get('/getHargaEmas','PdsController@getHargaEmas');

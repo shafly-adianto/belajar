@@ -313,7 +313,8 @@
 			var tenor = $('#tenor').val();
 			var resultCalc = calculateSewaModal(upPemohon,taksiran);
 			var angsuran = (upPemohon/tenor)+resultCalc['nettSewaModal'];
-			angsuran = Math.ceil(angsuran/10) * 10;
+			angsuran = Math.ceil(angsuran/100) * 100;
+
 			document.getElementById('result').innerHTML = "<table align='center'>"+
 															"<tr>"+
 																"<td><h4>Total Mu'Nah</h4></td>"+

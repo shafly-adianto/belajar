@@ -6,7 +6,7 @@
   <div class="col-md-8">
   	<div class="row" align="center" style="margin-bottom: 60px;">
   		<div class="col">
-  			<h3>Simulasi Beli Emas</h3>
+  			<h3>Simulasi Emasku</h3>
   		</div>
   	</div>
 	<div class="container-fluid">
@@ -35,7 +35,7 @@
 			<div class="form-group row">
 			    <label for="usia" class="col-sm-5 col-form-label">Usia Pemohon</label>
 			    <div class="col-sm-7">
-				 	<input type="number" class="form-control validate-input" id="usia" name="usia" placeholder="Usia" min="0" onchange="validateUsia(this.value)">
+				 	<input type="number" class="form-control validate-input" id="usia" name="usia" placeholder="Usia" min="0" onchange="changeUsia(this.value)">
 			    </div>
 			</div>
   		</div>
@@ -141,6 +141,17 @@
 			
 		}
 
+		function changeUsia(usia){
+			var validate_msg = validateUsia(usia);
+			if (validate_msg!="") {
+				showAlert(validate_msg);
+				$('#usia').val("");
+				$('#usia').focus();
+				return false;
+			}
+			return true;
+		}
+		
 		function biayaDp() {
 			var gramEmas = $('#berat').val();
 			var obj_biayaDp = {
@@ -192,13 +203,11 @@
 		}
 
 		function validateUsia(usia){
+			var validate_msg="";
 			if (parseInt(usia) < 17) {
-				var validate_msg="Usia tidak boleh kurang dari 17 tahun!";
-				showAlert(validate_msg);
-				$('#usia').focus();
-				return false;
+				validate_msg="Usia tidak boleh kurang dari 17 tahun!";
 			}
-			return true;
+			return validate_msg;
 		}
 	</script>
 @endpush
