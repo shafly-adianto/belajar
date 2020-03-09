@@ -12,6 +12,7 @@
         "botman/botman": "^2.5",
         "botman/driver-web": "^1.5",
         "fideloper/proxy": "^4.0",
+        "laracasts/utilities": "^3.1",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "yajra/laravel-datatables-oracle": "~6.0"
