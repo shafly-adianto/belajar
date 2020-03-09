@@ -301,6 +301,36 @@ dark green #00AB4E */
   visibility: visible;
 }
 
+.box{
+	background-color: #fff;
+	border: #ccc 1px solid;
+	padding: 50px;
+	display:block;
+	margin:5px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.custom-width{
+  width: 165px;
+}
+
+tr.row-diskonMuNah td {
+  position: relative;
+  top: -15px;
+}
+
+tr.row-nettMuNah td {
+  position: relative;
+  top: -30px;
+}
+
+tr.row-angsuranAmanah td {
+  position: relative;
+  top: -30px;
+}
+
+
 /* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
 @keyframes slide {
   0% {
@@ -357,4 +387,5 @@ dark green #00AB4E */
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
 }
