@@ -15,7 +15,7 @@
           <a class="dropdown-toggle" data-toggle="dropdown" class="{{ Request::is('produk') ? 'active' : '' }}" href="#">Simulasi</a>
           <ul class="dropdown-menu">
             <li><a href="{{url('')}}/simulasiGadai">Simulasi Gadai</a></li>
-            <li><a href="{{url('')}}/simulasiBeliEmas">Simulasi Beli Emas</a></li>
+            <li><a href="{{url('')}}/getHargaEmas">Simulasi Beli Emas</a></li>
             <li><a href="{{url('')}}/simulasiKreditAmanah">Simulasi Kredit Amanah</a></li>
           </ul>
         </li>

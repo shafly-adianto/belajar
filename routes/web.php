@@ -69,3 +69,5 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
+
+Route::get('/getHargaEmas','PdsController@getHargaEmas');

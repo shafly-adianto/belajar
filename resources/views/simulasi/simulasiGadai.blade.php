@@ -32,7 +32,7 @@
 				<div class="form-group row">
 					<label for="uangpinjaman" class="col-sm-5 col-form-label">Uang Pinjaman</label>
 					<div class="col-sm-7">
-						<input type="text" class="form-control" name="uangpinjaman" id="uangpinjaman" placeholder="Uang Pinjaman" onchange="calculateSewaModal()">
+						<input type="text" class="form-control" name="uangpinjaman" id="uangpinjaman" placeholder="Uang Pinjaman		" onchange="calculateSewaModal()" style="text-align: right;">
 					</div>
 				</div>
 			</div>
@@ -43,7 +43,7 @@
 					<div class="col-sm-7">
 						<div class="row">
 							<div class="col-md-6">
-							<select id="tenor" name="tenor" class="form-control">
+							<select id="tenor" name="tenor" class="form-control" style="width: 75px">
 								<option value="15">15</option>
 								<option value="30">30</option>
 								<option value="45">45</option>
@@ -55,7 +55,7 @@
 							</select>
 							</div>
 							<div class="col-md-6">
-								<input type="text" class="form-control" id="hari" name="hari" placeholder="Hari" readonly style="margin-left: -25px;">
+								<input type="text" class="form-control" id="hari" name="hari" placeholder="Hari" readonly style="margin-left: -10px;">
 							</div>
 						</div>
 					</div>
@@ -63,7 +63,7 @@
 				<div class="form-group row">
 					<label for="sewamodal" class="col-sm-5 col-form-label" id="labelSewaModal">Tarif Sewa Modal</label>
 					<div class="col-sm-7">
-						<input type="text" class="form-control" name="sewamodal" id="sewamodal" placeholder="Tarif Sewa Modal" readonly>
+						<input type="text" class="form-control" name="sewamodal" id="sewamodal" placeholder="Tarif Sewa Modal		" readonly style="text-align: right;">
 					</div>
 				</div>	
 			</div>
@@ -88,7 +88,7 @@
 	<div class="row last">
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
-			<p id="result" align="center">KONTOL</p>
+			<p id="result" align="center">RESULT</p>
 		</div>
 		<div class="col=md-2"></div>
 	</div>
@@ -96,22 +96,16 @@
 </div>
 @endsection
 @push('extra-script')
-	<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-
 	<script type="text/javascript">
 		$(document).ready(function(){
 			document.getElementById("result").style.display = "none";
 			// Format mata uang.
 			$('#uangpinjaman').mask('000.000.000.000', {reverse: true});
-			$('#sewamodal').mask('000.000.000.000', {reverse: true});
-			$('#administrasi').mask('000.000.000.000', {reverse: true});
 		})
 
 		function calculateSewaModal(){
 			var uangPinjam = $('#uangpinjaman').val();
+			alert(uangPinjam);
 			var uangPinjam = uangPinjam.replace(/\./g,'');
 			var sewaModal = 1;
 			if (uangPinjam < 50000) {
@@ -126,7 +120,15 @@
 				sewaModal = 1.1;
 			}
 			var tarifSewaModal = uangPinjam * (sewaModal/100);
-			document.getElementById('sewamodal').value = tarifSewaModal;
+			const formatter = new Intl.NumberFormat('en-US', {
+			  style: 'currency',
+			  currency: 'USD',
+			  minimumFractionDigits: 0
+			})
+
+			var value = formatter.format(tarifSewaModal).substring(1).replace(/,/g, ".");
+			// alert(value)
+			$('#sewamodal').val(value);
 			return;
 		}
 
@@ -146,4 +148,4 @@
 			return;
 		}
 	</script>
-@endpuch
+@endpush
