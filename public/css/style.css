@@ -16,6 +16,72 @@
 /* yellow #BFD730
 mid green #72BF44
 dark green #00AB4E */
+
+.headerChatbot{
+  width: 100%;
+  height: 35px;
+  background-color: #72BF44;
+}
+
+.tes{
+  width: 270px;
+  height: 100px;
+  float: right;
+  background-color: blue;
+}
+
+#bodyChatbot{
+  width: 100%;
+  height: 283px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.chatLeft{
+
+}
+
+.chatRight{
+  
+}
+
+.inputChatbot{
+  width: 100%;
+  height: 36px;
+  border-top: solid;
+  border-width: thin;
+  color: #72BF44;
+}
+
+#txtChatbot{
+  width: 100%;
+  padding: 5px;
+  border: none;
+}
+
+#closeChatbot{
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  color: white;
+}
+
+#closeChatbot:hover{
+  color: #BFD730;
+}
+
+#chatbotKetik{
+  width: 270px;
+  height: 350px;
+  bottom: 40px;
+  right: 40px;
+  position: fixed;
+  background-color: white;
+  box-shadow: 5px 10px 20px rgba(68, 68, 68, 0.5);
+  z-index: 99;
+  display: none;
+}
+
 #chatbot{
   bottom: 40px;
   right: 40px;
@@ -24,7 +90,7 @@ dark green #00AB4E */
   padding: 15px;
   border-radius: 55px;
   box-shadow: 5px 10px 20px rgba(68, 68, 68, 0.5);
-  z-index: 99;
+  z-index: 90;
 }
 
 #chatbot .icon{

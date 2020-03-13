@@ -24,4 +24,49 @@ $(window).scroll(function() {
     }
   });
 });
+
+$(document).ready(function(){
+  $("#chatbot").click(function(){
+    $("#chatbotKetik").show(400);
+    $("#chatbot").hide();
+  });
+
+  $("#closeChatbot").click(function(){
+    $("#chatbot").show();
+    $("#chatbotKetik").hide(400);
+  });
+
+  $("#txtChatbot").keypress(function(event) {
+    if (event.keyCode == 13) {
+      event.preventDefault();
+
+      kata = document.getElementById("txtChatbot");
+      loadDoc(kata.value);
+      document.getElementById("txtChatbot").value = "";
+    }
+  });
+});
+
+function loadDoc(kata) {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+
+  $.ajax({
+    type:'POST',
+    url:'http://localhost/belajar/public/getAnswer',
+    data:{inputan: kata},
+    success:function(data){
+      document.getElementById("bodyChatbot").innerHTML += 
+      "<div style='width: 100%; float: right; text-align: right; color: #72BF44; padding-left: 60px; margin-bottom: 20px'>"
+      +kata+
+      "</div>"+
+      "<div style='width: 100%; float: right; padding-right: 40px; text-align: justify; text-justify: inter-word; margin-bottom: 20px'>"
+      +data+
+      "</div>";
+    }
+  });
+}
 </script>

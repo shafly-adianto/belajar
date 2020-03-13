@@ -13,6 +13,8 @@
 
 Route::get('/', 'ViewController@index');
 
+Route::post('/getAnswer', 'GeaController@getAnswer');
+
 Route::get('/simulasiBeliEmas', 'ViewController@simulasiBeliEmas');
 Route::get('/simulasiKreditAmanah', 'ViewController@simulasiKreditAmanah');
 
