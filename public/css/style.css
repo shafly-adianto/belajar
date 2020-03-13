@@ -16,21 +16,124 @@
 /* yellow #BFD730
 mid green #72BF44
 dark green #00AB4E */
+
+.headerChatbot{
+  width: 100%;
+  height: 35px;
+  background-color: #72BF44;
+}
+
+.tes{
+  width: 270px;
+  height: 100px;
+  float: right;
+  background-color: blue;
+}
+
+#bodyChatbot{
+  width: 100%;
+  height: 283px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  overflow-y: auto;
+}
+
+.chatLeft{
+  width: 100%; 
+  float: right; 
+  padding-right: 40px; 
+  text-align: justify; 
+  text-justify: inter-word; 
+}
+
+.chatRight{
+  width: 100%; 
+  float: right; 
+  text-align: right; 
+  color: #72BF44; 
+  padding-left: 60px; 
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.dropDown{
+  width: 100%;
+}
+
+.inputChatbot{
+  width: 100%;
+  height: 36px;
+  border-top: solid;
+  border-width: thin;
+  color: #72BF44;
+}
+
+#txtChatbot{
+  width: 100%;
+  padding: 5px;
+  border: none;
+}
+
+#closeChatbot{
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  color: white;
+}
+
+#closeChatbot:hover{
+  color: #BFD730;
+}
+
+#chatbotKetik{
+  width: 270px;
+  height: 350px;
+  bottom: 40px;
+  right: 40px;
+  position: fixed;
+  background-color: white;
+  box-shadow: 5px 10px 20px rgba(68, 68, 68, 0.5);
+  z-index: 99;
+  display: none;
+}
+
+#chatbot{
+  bottom: 40px;
+  right: 40px;
+  position: fixed;
+  background-color: #72BF44;
+  padding: 15px;
+  border-radius: 55px;
+  box-shadow: 5px 10px 20px rgba(68, 68, 68, 0.5);
+  z-index: 90;
+}
+
+#chatbot .icon{
+  color: white;
+}
+
+#chatbot:hover{
+  background-color: #BFD730;
+}
+
 .panel-body{
   border-top: none !important;
 }
 
 .active{
-  background-color: #00AB4E !important;
-  color: white !important;
+  background-color: white !important;
+  font-weight: bold;
+  color: #BFD730 !important;
 }
 
 .navbar{
   background-color: white;
+  height: 90px;
 }
 
 #myNavbar{
-  /* padding-bottom: 20px; */
+  padding-top: 20px;
 }
 
 #myNavbar a{
@@ -39,8 +142,9 @@ dark green #00AB4E */
 }
 
 #myNavbar a:hover{
-  background-color: #00AB4E !important;
-  color: white !important;
+  background-color: white !important;
+  font-weight: bold;
+  color: #BFD730 !important;
 }
 
 .icon-bar{
@@ -48,7 +152,7 @@ dark green #00AB4E */
 }
 
 .navbar-toggle{
-  margin-top: 20px;
+  margin-top: 30px;
   border-color: #ddd;
 }
 
