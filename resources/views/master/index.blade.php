@@ -4,7 +4,7 @@
   @include('master.head')
   <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
-<body>
+<body onbeforeunload="return restartChat()">
   @include('master.nav')
   <div class="container-fluid">
     <div id="chatbotKetik">

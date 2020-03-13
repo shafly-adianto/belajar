@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class GeaController extends Controller
 {
     public function getAnswer(Request $request){
-      $reqParamArray['sender'] = 'User';
+      $reqParamArray['sender'] = $request->user;
       $reqParamArray['message'] = $request->inputan;
 
       $params = $reqParamArray;
@@ -24,7 +24,7 @@ class GeaController extends Controller
 
       $response = $response->getBody()->getContents();
 
-      $data = json_decode($response)[0]->text;
+      $data = json_decode($response);
 
       return $data;
     }
