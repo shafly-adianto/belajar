@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Session;
+use App\HargaEmas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -85,9 +87,17 @@ class PdsController extends Controller
         $url = '/main/harga_emas';
         $response =  $this->pdsRequest($url, null, 'GET', $token);
         if ($response) {
-            Session::put('response', $response);
+            $date =  Carbon::parse($response['data']['tglBerlaku'])->format('Y/m/d');
+            $tblHargaEmas = new HargaEmas;
+            $getByTanggal =  $tblHargaEmas::where('tanggal_berlaku',$date)->first();
+            if ($getByTanggal==null) {
+                $tblHargaEmas->tanggal_berlaku = $date;
+                $tblHargaEmas->harga_jual = $response['data']['hargaJual'];
+                $tblHargaEmas->harga_beli = $response['data']['hargaBeli'];
+                $tblHargaEmas->save();
+            }
         }
 
-        return redirect('/simulasiBeliEmas');
+        return $response;
     }
 }

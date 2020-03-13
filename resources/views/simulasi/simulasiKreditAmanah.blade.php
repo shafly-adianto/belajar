@@ -63,21 +63,15 @@
 			      	<input type="text" class="form-control custom-width validate-input" name="upMaks" id="upMaks" placeholder="Pinjaman Maks" readonly align="right">
 			    </div>
   			</div>
-			<div class="form-group row">
+  		</div>
+  		<div class="col-md-2"></div>
+  		<div class="col-md-5">
+		  	<div class="form-group row">
 			    <label for="upPemohon" class="col-sm-5 col-form-label">Uang Pinjaman Pemohon</label>
 			    <div class="col-sm-7">
 			      	<input type="text" class="form-control custom-width validate-input" name="upPemohon" id="upPemohon" placeholder="Pinjaman Pemohon" onchange="changeUpPemohon()" align="right">
 			    </div>
   			</div>
-  		</div>
-  		<div class="col-md-2"></div>
-  		<div class="col-md-5">
-		  	<div class="form-group row">
-			    <label for="usia" class="col-sm-5 col-form-label">Usia Pemohon</label>
-			    <div class="col-sm-7">
-				 	<input type="number" min=0 class="form-control custom-width validate-input" id="usia" name="usia" placeholder="Usia" onchange="changeUsia(this.value)">
-			    </div>
-			</div>
 			<div class="form-group row">
 			    <label for="statusPemohon" class="col-sm-5 col-form-label">Status Kepekerjaan Pemohon</label>
 			    <div class="col-sm-7">
@@ -217,17 +211,6 @@
 			var resultCalc = calculateSewaModal(upPemohon,taksiran);
 
 			$('#sewamodal').val(moneyFormatDots(resultCalc['nettSewaModal']));
-		}
-
-		function changeUsia(usia){
-			var validate_msg = validateUsia(usia);
-			if (validate_msg!="") {
-				showAlert(validate_msg);
-				$('#usia').val("");
-				$('#usia').focus();
-				return false;
-			}
-			return true;
 		}
 
 		function validateUpPemohon(upPemohon, upMaks) {
@@ -391,12 +374,5 @@
 			return validate_msg;
 		}
 
-		function validateUsia(usia){
-			var validate_msg="";
-			if (parseInt(usia) < 17) {
-				validate_msg="Usia tidak boleh kurang dari 17 tahun!";
-			}
-			return validate_msg;
-		}
 	</script>
 @endpush

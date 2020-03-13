@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\produk;
 use App\DiskonRateAmanah;
+use App\HargaEmas;
 use JavaScript;
 
 class ViewController extends Controller
@@ -15,7 +16,9 @@ class ViewController extends Controller
 
     public function simulasiBeliEmas()
     {
-        return view('simulasi.simulasiBeliEmas');
+        $responseEmas = HargaEmas::get()->sortByDesc('date')->first();
+
+        return view('simulasi.simulasiBeliEmas', ['responseEmas'=> $responseEmas]);
     }
 
     public function simulasiKreditAmanah()
