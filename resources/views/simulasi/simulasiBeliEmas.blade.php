@@ -21,7 +21,7 @@
   	<div class="row">
   		<div class="col-md-5">
 			<div class="form-group row">
-			    <label for="hargaEmas" class="col-sm-5 col-form-label">Harga Beli Emas /gr</label>
+			    <label for="hargaEmas" class="col-sm-5 col-form-label">Harga Jual Emas /gr</label>
 			    <div class="col-sm-7">
 			     	<input type="text" class="form-control validate-input" name="hargaEmas" id="hargaEmas" value="{{$responseEmas['harga_jual']!=null?$responseEmas['harga_jual']:0}}" readonly placeholder="Harga Emas">
 			    </div>

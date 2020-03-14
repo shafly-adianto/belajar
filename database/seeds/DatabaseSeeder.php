@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
           vocab_product_seeder::class,
           vocab_time_seeder::class,
           vocab_verb_seeder::class,
-          vocab_answer_seeder::class
+          vocab_answer_seeder::class,
+          DiskonRateAmanahTableSeeder::class
         ]);
     }
 }
