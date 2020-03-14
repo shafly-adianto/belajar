@@ -23,25 +23,16 @@
 			<div class="form-group row">
 			    <label for="hargaEmas" class="col-sm-5 col-form-label">Harga Beli Emas /gr</label>
 			    <div class="col-sm-7">
-			     	<input type="text" class="form-control validate-input" name="hargaEmas" id="hargaEmas" value="{{isset(Session::get('response')['data']['hargaJual'])?Session::get('response')['data']['hargaJual']:0}}" readonly placeholder="Harga Emas">
+			     	<input type="text" class="form-control validate-input" name="hargaEmas" id="hargaEmas" value="{{$responseEmas['harga_jual']!=null?$responseEmas['harga_jual']:0}}" readonly placeholder="Harga Emas">
 			    </div>
 			</div>
 			<div class="form-group row">
 			    <label for="perTanggal" class="col-sm-5 col-form-label">Per Tanggal</label>
 			    <div class="col-sm-7">
-			      	<input type="text" class="form-control validate-input" name="perTanggal" id="perTanggal" value="{{isset(Session::get('response')['data']['hargaJual'])?Session::get('response')['data']['tglBerlaku']:''}}" readonly placeholder="Per Tanggal Harga Emas">
+			      	<input type="text" class="form-control validate-input" name="perTanggal" id="perTanggal" value="{{$responseEmas['tanggal_berlaku']!=null?$responseEmas['tanggal_berlaku']:''}}" readonly placeholder="Tanggal Berlaku">
 			    </div>
   			</div>
 			<div class="form-group row">
-			    <label for="usia" class="col-sm-5 col-form-label">Usia Pemohon</label>
-			    <div class="col-sm-7">
-				 	<input type="number" class="form-control validate-input" id="usia" name="usia" placeholder="Usia" min="0" onchange="changeUsia(this.value)">
-			    </div>
-			</div>
-  		</div>
-  		<div class="col-md-2"></div>
-  		<div class="col-md-5">
-		  <div class="form-group row">
 			    <label for="berat" class="col-sm-5 col-form-label">Berat Gram</label>
 			    <div class="col-sm-7">
 			      	<select name="berat" id="berat" class="form-control validate-input" onchange="biayaDp()">
@@ -53,6 +44,9 @@
 			      	</select>
 			    </div>
   			</div>
+  		</div>
+  		<div class="col-md-2"></div>
+  		<div class="col-md-5">
   			<div class="form-group row">
 			    <label for="biayadp" class="col-sm-5 col-form-label">Biaya DP</label>
 			    <div class="col-sm-7">
@@ -67,7 +61,7 @@
 				    		<input type="number" class="form-control validate-input" id="tenor" name="tenor" placeholder="Tenor" value="12" readonly>
 				    	</div>
 				    	<div class="col-md-6">
-				    		<input type="text" class="form-control" id="tenor" name="bulan" placeholder="Bulan" readonly style="margin-left: -25px;">
+				    		<input type="text" class="form-control" id="angsuran" name="angsuran" placeholder="Angsuran" readonly style="margin-left: -25px; width: 88px;">
 				    	</div>
 			    	</div>
 			    </div>
@@ -141,16 +135,7 @@
 			
 		}
 
-		function changeUsia(usia){
-			var validate_msg = validateUsia(usia);
-			if (validate_msg!="") {
-				showAlert(validate_msg);
-				$('#usia').val("");
-				$('#usia').focus();
-				return false;
-			}
-			return true;
-		}
+		
 		
 		function biayaDp() {
 			var gramEmas = $('#berat').val();
@@ -177,7 +162,6 @@
 
 		function doReset() {
 			$('#berat').val("");
-			$('#usia').val("");
 			$('#biayadp').val("");
 			document.getElementById('result').innerHTML="";
 			document.getElementById('result').style.display="none";
@@ -200,14 +184,6 @@
 			$("#danger-alert").fadeTo(3000, 500).slideUp(500, function(){
 				$("#danger-alert").slideUp(500);
 			}).html("<strong>Error! </strong> "+message+"<button type='button' class='close' data-dismiss='alert'>x</button>");	
-		}
-
-		function validateUsia(usia){
-			var validate_msg="";
-			if (parseInt(usia) < 17) {
-				validate_msg="Usia tidak boleh kurang dari 17 tahun!";
-			}
-			return validate_msg;
 		}
 	</script>
 @endpush

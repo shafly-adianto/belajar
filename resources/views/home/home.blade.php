@@ -65,3 +65,20 @@
   <img src="{{url('')}}/image/pegadaian_center.png" alt="Logo Pegadaian">
 </div>
 @endsection
+@push('extra-script')
+<script type="text/javascript">
+		$(document).ready(function(){
+			$.ajax({
+          method: 'GET', 
+          url: '/getHargaEmas', 
+          success: function(response){ 
+              console.log('Success Login and Save to DB HargaEmas'); 
+          },
+          error: function(jqXHR, textStatus, errorThrown) { 
+              console.log(JSON.stringify(jqXHR));
+              console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+          }
+      });
+		})
+	</script>
+@endpush
