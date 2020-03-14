@@ -79,7 +79,7 @@ function loadDoc(user, kata) {
 
   $.ajax({
     type:'POST',
-    url:'http://localhost/belajar/public/getAnswer',
+    url:'/getAnswer',
     data:{inputan: kata, user: user},
     success:function(data){
       for(object in data){
