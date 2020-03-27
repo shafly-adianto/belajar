@@ -1,0 +1,495 @@
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url('../font/Montserrat-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url('../font/Montserrat-Medium.otf');
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('../font/Montserrat-Bold.otf');
+}
+
+/* yellow #BFD730
+mid green #72BF44
+dark green #00AB4E */
+
+.headerChatbot{
+  width: 100%;
+  height: 35px;
+  background-color: #72BF44;
+}
+
+.tes{
+  width: 270px;
+  height: 100px;
+  float: right;
+  background-color: blue;
+}
+
+#bodyChatbot{
+  width: 100%;
+  height: 283px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  overflow-y: auto;
+}
+
+.chatLeft{
+  width: 100%; 
+  float: right; 
+  padding-right: 40px; 
+  text-align: justify; 
+  text-justify: inter-word; 
+}
+
+.chatRight{
+  width: 100%; 
+  float: right; 
+  text-align: right; 
+  color: #72BF44; 
+  padding-left: 60px; 
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.dropDown{
+  width: 100%;
+}
+
+.inputChatbot{
+  width: 100%;
+  height: 36px;
+  border-top: solid;
+  border-width: thin;
+  color: #72BF44;
+}
+
+#txtChatbot{
+  width: 100%;
+  padding: 5px;
+  border: none;
+}
+
+#closeChatbot{
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  color: white;
+}
+
+#closeChatbot:hover{
+  color: #BFD730;
+}
+
+#chatbotKetik{
+  width: 270px;
+  height: 350px;
+  bottom: 40px;
+  right: 40px;
+  position: fixed;
+  background-color: white;
+  box-shadow: 5px 10px 20px rgba(68, 68, 68, 0.5);
+  z-index: 99;
+  display: none;
+}
+
+#chatbot{
+  bottom: 40px;
+  right: 40px;
+  position: fixed;
+  background-color: #72BF44;
+  padding: 15px;
+  border-radius: 55px;
+  box-shadow: 5px 10px 20px rgba(68, 68, 68, 0.5);
+  z-index: 90;
+}
+
+#chatbot .icon{
+  color: white;
+}
+
+#chatbot:hover{
+  background-color: #BFD730;
+}
+
+.panel-body{
+  border-top: none !important;
+}
+
+.active{
+  background-color: white !important;
+  font-weight: bold;
+  color: #BFD730 !important;
+}
+
+.navbar{
+  background-color: white;
+  height: 90px;
+}
+
+#myNavbar{
+  padding-top: 20px;
+}
+
+#myNavbar a{
+  color: #00AB4E;
+  font-family: "Montserrat-Medium";
+}
+
+#myNavbar a:hover{
+  background-color: white !important;
+  font-weight: bold;
+  color: #BFD730 !important;
+}
+
+.icon-bar{
+  background-color: #00AB4E !important;
+}
+
+.navbar-toggle{
+  margin-top: 30px;
+  border-color: #ddd;
+}
+
+.promo{
+  height: 500px;
+}
+
+#myCarousel{
+  top: 110px;
+}
+
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #00AB4E;
+  }
+
+  .carousel-indicators li {
+   border-color: #72BF44;
+ }
+
+ .carousel-indicators li.active {
+   background-color: #72BF44;
+ }
+
+ .item img{
+   margin-top: 45px;
+   width: 48%;
+   margin-left: 70px;
+ }
+
+.carousel-indicators{
+  top: 125%;
+}
+
+.caption{
+  width: 60%;
+  margin-top: 90px;
+  text-align: left;
+  float: right;
+  margin-right: 50px;
+  color: #00AB4E;
+}
+
+.caption h3{
+  font-family: "Montserrat-Bold";
+  font-size: 45px;
+}
+
+.caption p{
+  font-family: "Montserrat-light";
+  margin-top: 10px;
+}
+
+.caption .date{
+  font-family: "Montserrat-Medium";
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.slogan{
+  margin-top: 80px;
+  padding: 0 100px;
+}
+
+.slogan h1{
+  margin-top: 40%;
+  font-family: "Montserrat-Bold";
+  font-size: 60px;
+  color: #00AB4E;
+}
+
+.pattern{
+  z-index: -99;
+  opacity: 0.5;
+  right: 0;
+  top: 50px;
+  position: absolute;
+}
+
+.pattern2{
+  z-index: -99;
+  opacity: 0.2;
+  left: 0;
+  position: absolute;
+}
+
+.pattern3{
+  z-index: -99;
+  opacity: 0.4;
+  right: 0;
+  position: absolute;
+}
+
+.pattern img{
+  height: 800px;
+}
+
+.slogan h2{
+  font-family: "Montserrat-Medium";
+  font-size: 40px;
+  margin-top: -5px;
+  color: #606061;
+}
+
+.slogan img{
+  object-fit: cover;
+}
+
+.tentang{
+  margin-top: 180px;
+  margin-bottom: 100px;
+  padding: 0 100px;
+  color: #00AB4E;
+}
+
+.tentang img{
+  width: 80%;
+}
+
+.tentang .isi{
+  font-family: "Montserrat-Light";
+  margin-top: 30px;
+  text-align: justify;
+  text-justify: inter-word;
+  color: #606061;
+}
+
+.tentang .judul{
+  font-family: "Montserrat-Medium";
+  font-size: 50px;
+}
+
+.tentang b{
+  font-family: "Montserrat-Bold";
+}
+
+.garis{
+  border-bottom: solid;
+  border-bottom-width: thick;
+  width: 100px;
+  margin:0 auto;
+  color: #00AB4E;
+}
+
+.fitur{
+  padding: 0 100px;
+  margin-bottom: 50px;
+  text-align: center;
+  /* background-color: #00AB4E; */
+}
+
+.fitur .judul{
+  font-size: 50px;
+  color: #00AB4E;
+  font-family: "Montserrat-Medium";
+}
+
+.fitur b{
+  font-family: "Montserrat-Bold";
+}
+
+.fitur .isi{
+  margin-top: 80px;
+  text-align: center;
+}
+
+.fitur .isi .icon{
+  width: 100%;
+  height: 150px;
+}
+
+.fitur .isi img{
+  width: 130px;
+  margin: 0 auto !important;
+}
+
+.fitur .isi a:hover{
+  text-decoration: none;
+}
+
+.fitur .isi a:hover img{
+  width: 160px;
+  transition: 0.3s;
+}
+
+.fitur .isi div p{
+  padding: 30px 20px;
+  color: #606061;
+  font-family: "Montserrat-Medium";
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.findus{
+  text-align: center;
+  background-color: #00AB4E;
+  padding: 50px 0;
+}
+
+.findus .judul{
+  color: white;
+  font-family: "Montserrat-Medium";
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.findus b{
+  font-family: "Montserrat-Bold";
+}
+
+.findus .isi{
+  width: 300px;
+  margin: 0 auto;
+}
+
+.findus .sosmed{
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+.findus img{
+  width: 50px;
+}
+
+.findus a img:hover{
+  width: 60px;
+  transition: 0.3s;
+}
+
+.copyright{
+  padding: 10px 100px;
+  text-align: center;
+}
+
+.copyright img{
+  width: 80px
+}
+
+.slideanim {visibility:hidden;}
+.slide {
+  /* The name of the animation */
+  animation-name: slide;
+  -webkit-animation-name: slide;
+  /* The duration of the animation */
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  /* Make the element visible */
+  visibility: visible;
+}
+
+.box{
+	background-color: #fff;
+	border: #ccc 1px solid;
+	padding: 50px;
+	display:block;
+	margin:5px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.custom-width{
+  width: 165px;
+}
+
+tr.row-diskonMuNah td {
+  position: relative;
+  top: -15px;
+}
+
+tr.row-nettMuNah td {
+  position: relative;
+  top: -30px;
+}
+
+tr.row-angsuranAmanah td {
+  position: relative;
+  top: -30px;
+}
+
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
+}
+
+@media only screen and (max-width: 991px){
+  .slogan{
+      text-align: center;
+  }
+
+  .tentang{
+    text-align: center;
+  }
+
+  .tentang .judul{
+    margin-top: 50px;
+  }
+
+  .fitur{
+    text-align: center;
+  }
+
+  .fitur .isi{
+    margin-top: 0px;
+  }
+
+  .fitur .isi div{
+    margin-top: 50px;
+  }
+
+  .fitur .isi div p{
+    padding: 30px 0px;
+}
+
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+}

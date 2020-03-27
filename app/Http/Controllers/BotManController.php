@@ -5,47 +5,117 @@ namespace App\Http\Controllers;
 use BotMan\BotMan\BotMan;
 use Illuminate\Http\Request;
 use BotMan\BotMan\Messages\Incoming\Answer;
+use App\vocab_greetings;
+use App\vocab_how;
+use App\vocab_product;
+use App\vocab_time;
+use App\vocab_verb;
 
 class BotManController extends Controller
 {
-    /**
-     * Place your BotMan logic here.
-     */
-    public function handle()
-    {
-        $botman = app('botman');
+  public function handle()
+  {
+    $botman = app('botman');
 
-        $botman->hears('{data}', function ($bot, $data) {
-            $info2 = "Ada lagi yang bisa dibantu?";
-            $array = explode(' ', $data);
+    $botman->hears('{data}', function ($bot, $data) {
+      $kalimat = strtolower($data);
+      $kata = explode(" ", $kalimat);
 
-            $count = count($array);
-            $checker = 0;
+      $checker = $this->checking_vocab($kata);
+      $answer = $this->getting_answer($checker);
 
-            for($i=0; $i<$count; $i++){
-              if($array[$i]=='produk') $checker++;
-              elseif($array[$i]=='pegadaian') $checker++;
-            }
+      $bot->reply($answer);
+    });
 
-            if($checker==2) $info = "Produk Pegadaian yang ada saat ini adalah KCA, Gadai, Amanah, Emas. ".$info2;
-            else $info = "Maaf, saya tidak memahami maksud anda. ".$info2;
+    $botman->listen();
+  }
 
-            $bot->reply($info);
-        });
+  public function getting_answer($checker){
+    $answer = "";
 
-        $botman->listen();
+    // ===== greetings =====
+    if(intval($checker->greetings['count']) > 0){
+      $answer .= $checker->greetings['kata'];
+      if(intval($checker->time['count']) > 0){
+        $answer .= ', '.$checker->time['kata'];
+      }
+      $answer .= ' :)';
     }
 
-    /**
-     * Place your BotMan logic here.
-     */
-    public function askName($botman)
-    {
-        $botman->ask('Hello! What is your Name?', function(Answer $answer) {
-
-            $name = $answer->getText();
-
-            $this->say('Nice to meet you '.$name);
-        });
+    if(intval($checker->time['count']) > 0 && intval($checker->greetings['count']) == 0){
+      $answer .= $checker->time['kata'].' :)';
     }
+    // ====================
+
+    if(intval($checker->how['count']) > 0){
+      $answer .= 'how:'.$checker->how['kata'].'; ';
+    }
+
+    if(intval($checker->product['count']) > 0){
+      $answer .= 'product:'.$checker->product['kata'].'; ';
+    }
+
+    if(intval($checker->verb['count']) > 0){
+      $answer .= 'verb:'.$checker->verb['kata'].'; ';
+    }
+
+    if($answer=="") return "Maaf, gea ga paham :(";
+    return $answer;
+  }
+
+  public function checking_vocab($kata){
+    $checker = (object)[];
+    $checker->greetings['count'] = 0;
+    $checker->how['count'] = 0;
+    $checker->product['count'] = 0;
+    $checker->time['count'] = 0;
+    $checker->verb['count'] = 0;
+
+    foreach ($kata as $value) {
+      if(!is_null($vocab = $this->count_greetings($value))){
+        $checker->greetings['count'] += 1;
+        $checker->greetings['kata'] = $vocab->vocab;
+      }
+      if($jumlah=$this->count_how($value)>0){
+        $checker->how['count'] += $jumlah;
+        $checker->how['kata'] = $value;
+      }
+      if($jumlah=$this->count_product($value)>0){
+        $checker->product['count'] += $jumlah;
+        $checker->product['kata'] = $value;
+      }
+      if(!is_null($vocab = $this->count_time($value))){
+        $checker->time['count'] += 1;
+        $checker->time['kata'] = $vocab->vocab;
+      }
+      if($jumlah=$this->count_verb($value)>0){
+        $checker->verb['count'] += $jumlah;
+        $checker->verb['kata'] = $value;
+      }
+    }
+
+    return $checker;
+  }
+
+  // Toleransi typo 1 char untuk soundex
+
+  public function count_greetings($value){
+    return vocab_greetings::whereRaw('soundex(vocab) like soundex(?)', $value)->first();
+  }
+
+  public function count_how($value){
+    return vocab_how::where('vocab','=',$value)->count();
+  }
+
+  public function count_product($value){
+    return vocab_product::where('vocab','=',$value)->count();
+  }
+
+  public function count_time($value){
+    return vocab_time::whereRaw('soundex(vocab) like soundex(?)', $value)->first();
+  }
+
+  public function count_verb($value){
+    return vocab_verb::where('vocab','=',$value)->count();
+  }
 }
