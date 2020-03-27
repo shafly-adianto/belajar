@@ -70,7 +70,7 @@
 		$(document).ready(function(){
 			$.ajax({
           method: 'GET', 
-          url: '/getHargaEmas', 
+          url: "{{url('')}}/getHargaEmas", 
           success: function(response){ 
               console.log('Success Login and Save to DB HargaEmas'); 
           },
