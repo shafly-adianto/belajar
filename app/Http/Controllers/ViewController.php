@@ -16,7 +16,7 @@ class ViewController extends Controller
 
   public function simulasiBeliEmas()
   {
-      $responseEmas = HargaEmas::get()->sortByDesc('date')->first();
+      $responseEmas = HargaEmas::get()->sortByDesc('tanggal_berlaku')->first();
 
       return view('simulasi.simulasiBeliEmas', ['responseEmas'=> $responseEmas]);
   }
